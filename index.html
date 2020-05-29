@@ -2,6 +2,7 @@
   <head>
     <title>Happy Bday</title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/spinner.css">
     <link href="styles/main.css" rel="stylesheet">
     <!-- Custom styling for the header -->
     <link href="styles/header.css" rel="stylesheet">
@@ -11,6 +12,14 @@
     <!-- <link rel="stylesheet" href="E:/animate scroll/aos-master/dist/aos.css"> -->
   </head>
   <body>
+
+    <!-- Begining of spinner -->
+ <div class="loader-wrapper" id="ld">
+  <span class="loader"><span class="loader-inner"></span></span>
+      </div>
+      <!-- End of spinner -->
+
+
     <header>
       <section class="header-bg-blurry"></section>
       <section class="header-content">
@@ -152,9 +161,15 @@ light up a whole city.
 
     <script>
         AOS.init();
-      // Prepare the body tag by adding a "js-paused" class
-      document.body.className += " js-loading";
 
+  // Listen for when everything has loaded
+  window.addEventListener("load", removePage, false);
+        const loader = document.getElementById('ld');
+        function removePage(){
+          loader.classList.add('shrink');
+        }
+
+     
       // Listen for when everything has loaded
       window.addEventListener("load", showPage, false);
 
