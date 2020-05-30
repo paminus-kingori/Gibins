@@ -141,7 +141,7 @@ border-color: green;
     }
 }
 
-@media only screen and (max-width:400px){
+@media only screen and (max-width:750px){
     .header-title{
         font-size: 37px;
     }
@@ -150,7 +150,7 @@ border-color: green;
         height:140px;
     }
     .greeting{
-        font-size: 30px;
+        font-size: 35px;
         margin: 50px 5px;
     }
     .sector-text{
@@ -159,5 +159,6 @@ border-color: green;
     .main-content{
         flex-direction:column;
         flex-wrap: nowrap;
+        align-items: center;
     }
 }
