@@ -3,8 +3,7 @@
     <title>Happy Bday</title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/spinner.css">
-    <link href="styles/main.css" rel="stylesheet">
-    <!-- Custom styling for the header -->
+    <!-- <link href="styles/main.css" rel="stylesheet"> -->
     <link href="styles/header.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="mso.css">
@@ -161,22 +160,34 @@ light up a whole city.
 
     <script>
         AOS.init();
+        // Prepare the body tag by adding a "js-loading" class
+      document.body.className += " js-loading";
+      // document.body.className += "js-anima";
 
-  // Listen for when everything has loaded
-  window.addEventListener("load", removePage, false);
-        const loader = document.getElementById('ld');
-        function removePage(){
-          loader.classList.add('shrink');
-        }
-
-     
       // Listen for when everything has loaded
       window.addEventListener("load", showPage, false);
 
       function showPage() {
         // Remove the "js-paused" class
         document.body.className = document.body.className.replace("js-loading","");
+
+
+  // // Listen for when everything has loaded
+  // window.addEventListener("load", removePage, false);
+  //       const loader = document.getElementById('ld');
+  //       function removePage(){
+  //         loader.classList.add('shrink');
+  //       }
+
+     
+  //     // Listen for when everything has loaded
+  //     window.addEventListener("load", showPage, false);
+
+  //     function showPage() {
+  //       // Remove the "js-paused" class
+  //       document.body.className = document.body.className.replace("js-loading","");
       }
+
     </script>
   </body>
 </html>

@@ -80,8 +80,8 @@ html {
     font-size: 10px;
     font-family: Open Sans, sans-serif;
     line-height: 1.15;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+    /* -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; */
 }
 body {
     font-size: 1.8rem;
@@ -117,6 +117,7 @@ footer {
 
     font-family: 'Be Vietnam', sans-serif;
     background: linear-gradient(201deg, #2a05f3, #c137d0b3);
+
     color: #fff;
     padding: 4rem;
     margin-top: 50px;
