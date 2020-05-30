@@ -108,6 +108,7 @@ animation-delay: 0s ;
     justify-self: flex-start;
 border: 2px solid white;
 margin-bottom: 10px;
+height: 230px;
 }
 .story-img{
     width:100%;
@@ -116,7 +117,7 @@ margin-bottom: 10px;
 .sector-text{
     line-height: 1.25;
     margin: 15px 0px;
-    font-size: 1em;
+    font-size: 1.1em;
     width: 260px;
     text-align: center;
     color: white;
@@ -169,10 +170,9 @@ border-color: green;
         margin: 50px 5px;
     }
     .sector-text{
-        font-size:0.9em;
+        font-size:1em;
     }
     .main-content{
-        display:block;
         flex-direction:column;
         flex-wrap: nowrap;
         align-items: center;
