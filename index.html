@@ -7,11 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/spinner.css">
     <!-- <link href="styles/main.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="E:/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <link href="styles/header.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="mso.css">
 
-    <!-- <link rel="stylesheet" href="E:/animate scroll/aos-master/dist/aos.css"> -->
+    <link rel="stylesheet" href="E:/animate scroll/aos-master/dist/aos.css">
   </head>
   <body>
 
@@ -54,16 +55,20 @@
     </header>
 
     <div class="greeting">
-        Hi there! Let's take a trip down memory lane.
+        Hi there! Let's take a trip down memory lane. 
     </div>
 
     <div class="main-content" id="main">
+      <div class="preview">
+        <button type="button" class="btn btn-danger" id="X">X</button>
+      </div>
 
       <!-- one -->
         <div class="sector" data-aos="fade-right" data-aos-duration="1000">
 
             <div class="img-part">
-             <img src="first.jpeg" alt="picture" class="story-img">
+             <!-- <a download href="first.jpeg" target="_blank"> -->
+             <img src="first.jpeg" alt="picture" class="story-img" id="first">
              </div>
 
              <div class="sector-text">
@@ -75,7 +80,8 @@
         <div class="sector" data-aos="fade-left" data-aos-duration="1000">
 
           <div class="img-part">
-           <img src="kind.jpeg" alt="picture" class="story-img">
+            <!-- <a download href="kind.jpeg" target="_blank"> -->
+           <img src="kind.jpeg" alt="picture" class="story-img" id="two">
            </div>
 
            <div class="sector-text">
@@ -87,7 +93,7 @@
       <div class="sector" data-aos="fade-up" data-aos-duration="1000">
 
         <div class="img-part">
-         <img src="nyam2.jpeg" alt="picture" class="story-img">
+         <img src="nyam2.jpeg" alt="picture" class="story-img" id="three">
          </div>
 
          <div class="sector-text">
@@ -99,7 +105,7 @@
     <div class="sector" data-aos="fade-down" data-aos-duration="1000">
 
       <div class="img-part">
-       <img src="hme.jpeg" alt="picture" class="story-img">
+       <img src="hme.jpeg" alt="picture" class="story-img" id="four">
        </div>
 
        <div class="sector-text">
@@ -112,7 +118,7 @@
   <div class="sector" data-aos="fade-right" data-aos-duration="1000">
 
     <div class="img-part">
-     <img src="page1.jpeg" alt="picture" class="story-img">
+     <img src="page1.jpeg" alt="picture" class="story-img" id="five">
      </div>
 
      <div class="sector-text">
@@ -124,7 +130,7 @@
          <div class="sector" data-aos="fade-left" data-aos-duration="1000">
 
           <div class="img-part">
-           <img src="grad2.jpeg" alt="picture" class="story-img">
+           <img src="grad2.jpeg" alt="picture" class="story-img" id="six">
            </div>
       
            <div class="sector-text">
@@ -138,7 +144,7 @@ light up a whole city.
 <div class="sector" data-aos="fade-right" data-aos-duration="1000">
 
   <div class="img-part">
-   <img src="work1.jpeg" alt="picture" class="story-img">
+   <img src="work1.jpeg" alt="picture" class="story-img" id="seven">
    </div>
 
    <div class="sector-text">
@@ -159,9 +165,9 @@ light up a whole city.
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<!-- <script src="E:/animate scroll/aos-master/dist/aos.js"></script> -->
+<script src="E:/animate scroll/aos-master/dist/aos.js"></script>
 
-    <script>
+/    <script>
         AOS.init();
         // Prepare the body tag by adding a "js-loading" class
       document.body.className += " js-loading";
@@ -174,21 +180,88 @@ light up a whole city.
         // Remove the "js-paused" class
         document.body.className = document.body.className.replace("js-loading","");
 
+        let pic = document.createElement('img');
 
-  // // Listen for when everything has loaded
-  // window.addEventListener("load", removePage, false);
-  //       const loader = document.getElementById('ld');
-  //       function removePage(){
-  //         loader.classList.add('shrink');
-  //       }
+        let preview = document.querySelector('.preview');
+        // pictures
+        let first = document.querySelector('#first');
+        let two = document.querySelector('#two');
+        let three = document.querySelector('#three');
+        let four = document.querySelector('#four');
+        let five = document.querySelector('#five');
+        let six = document.querySelector('#six');
+        let seven = document.querySelector('#seven');
+        console.log(first.src);
+        // all pics
+        let allPics =  document.querySelectorAll('.story-img');
+        let X = document.querySelector('#X');
+        console.log(allPics);
+        X.addEventListener('click',function(){
+          preview.classList.remove('showUp');
+        });
 
-     
-  //     // Listen for when everything has loaded
-  //     window.addEventListener("load", showPage, false);
+        // function insert(){
+        //   // pic.src = this.src;
+        //   console.log(pic);
+        //   preview.append(pic);
+        //  preview.classList.add('showUp');
+        // }
 
-  //     function showPage() {
-  //       // Remove the "js-paused" class
-  //       document.body.className = document.body.className.replace("js-loading","");
+        first.addEventListener('click',function(){
+          pic.src = first.src;
+          console.log(pic);
+          preview.append(pic);
+         preview.classList.add('showUp');
+        });
+        two.addEventListener('click',
+        function(){
+          pic.src = two.src;
+          console.log(pic);
+          preview.append(pic);
+         preview.classList.add('showUp');
+        }
+        );
+        three.addEventListener('click',
+        function(){
+          pic.src = three.src;
+          console.log(pic);
+          preview.append(pic);
+         preview.classList.add('showUp');
+        }
+        );
+        four.addEventListener('click',
+        function(){
+          pic.src = four.src;
+          console.log(pic);
+          preview.append(pic);
+         preview.classList.add('showUp');
+        }
+        );
+        five.addEventListener('click',
+        function(){
+          pic.src = five.src;
+          console.log(pic);
+          preview.append(pic);
+         preview.classList.add('showUp');
+        }
+        );
+        six.addEventListener('click',
+        function(){
+          pic.src = six.src;
+          console.log(pic);
+          preview.append(pic);
+         preview.classList.add('showUp');
+        }
+        );
+        seven.addEventListener('click',
+        function(){
+          pic.src = seven.src;
+          console.log(pic);
+          preview.append(pic);
+         preview.classList.add('showUp');
+        }
+        );
+        
       }
 
     </script>
